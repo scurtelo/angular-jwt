@@ -155,7 +155,22 @@ angular
   });
 ```
 
-Note that you only need to provide the domain. Protocols (ex: `http://`) and port numbers should be omitted. 
+Note that you only need to provide the domain. Protocols (ex: `http://`) and port numbers should be omitted.
+
+You can also specify the domain using a regular expression.
+
+```js
+angular
+  .module('app', ['angular-jwt'])
+  .config(function Config($httpProvider, jwtOptionsProvider) {
+    jwtOptionsProvider.config({
+
+      ...
+
+      whiteListedDomains: [/api-version-\d+.myapp.com$/i, 'localhost']
+    });
+  });
+```
 
 ### Not Sending the JWT for Template Requests
 
