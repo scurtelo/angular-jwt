@@ -22,8 +22,8 @@ describe('interceptor', function() {
     });
 
     inject(function ($http, $httpBackend) {
-        $http({url: '/hello'}).success(function (data) {
-          expect(data).to.be.equal('hello');
+        $http({url: '/hello'}).then(function (data) {
+          expect(data.data).to.be.equal('hello');
           done();
         });
 
@@ -108,8 +108,8 @@ describe('interceptor', function() {
     });
 
     inject(function ($http, $httpBackend) {
-        $http({url: '/hello'}).success(function (data) {
-          expect(data).to.be.equal('hello');
+        $http({url: '/hello'}).then(function (data) {
+          expect(data.data).to.be.equal('hello');
           done();
         });
 
@@ -127,8 +127,8 @@ describe('interceptor', function() {
     });
 
     inject(function ($http, $httpBackend) {
-        $http({url: '/hello'}).success(function (data) {
-          expect(data).to.be.equal('hello');
+        $http({url: '/hello'}).then(function (data) {
+          expect(data.data).to.be.equal('hello');
           done();
         });
 
@@ -150,8 +150,8 @@ describe('interceptor', function() {
     });
 
     inject(function ($http, $httpBackend) {
-        $http({url: '/hello'}).success(function (data) {
-          expect(data).to.be.equal('hello');
+        $http({url: '/hello'}).then(function (data) {
+          expect(data.data).to.be.equal('hello');
           done();
         });
 
