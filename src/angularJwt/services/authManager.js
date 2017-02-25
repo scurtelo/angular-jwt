@@ -49,7 +49,7 @@ angular.module('angular-jwt.authManager', [])
             $rootScope.$broadcast('tokenHasExpired', token);
           }
         }
-      }      
+      }
 
       function checkAuthOnRefresh() {
         if ($injector.has('$transitions')) {
@@ -88,15 +88,13 @@ angular.module('angular-jwt.authManager', [])
           }
       }
 
-      if ($injector.has('$transition')) {
+      if ($injector.has('$transitions')) {
         var $transitions = $injector.get('$transitions');
         $transitions.onStart({}, verifyState);;
       } else {
         var eventName = ($injector.has('$state')) ? '$stateChangeStart' : '$routeChangeStart';
         $rootScope.$on(eventName, verifyRoute);
       }
-
-      
 
       return {
         authenticate: authenticate,
